@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 const StyledRow = styled.div`
   display: flex;
+  padding: 15px 0;
 `;
 
 const Row = ({ children }) => {

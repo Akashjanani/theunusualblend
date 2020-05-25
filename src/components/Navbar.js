@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 
 import { Grid, Row, Col } from '../styles';
 
-const PadddedRow = styled(Row)`
-  padding-bottom: 15px;
-  padding-top: 15px;
+const FlexRow = styled.div`
+  display: flex;
+  justify-content: ${(props) => props.justify};
 `;
 
 const StyledLink = styled(Link)`
@@ -20,7 +20,7 @@ const StyledWrapper = styled.div`
   font-weight: 400;
   letter-spacing: 0em;
   line-height: 1.8em;
-  margin-left: 2.5vw;
+  margin-right: 2.5vw;
 `;
 
 const StyledHeaderLink = styled(StyledLink)`
@@ -42,16 +42,16 @@ const StyledNavLink = styled(StyledLink)`
 const Navbar = () => {
   return (
     <Grid>
-      <PadddedRow>
+      <Row>
         <Col size={1}>
-          <Row>
+          <FlexRow justify="flex-start">
             <StyledHeaderWrapper>
               <StyledHeaderLink to="/">theUnusualBlend</StyledHeaderLink>
             </StyledHeaderWrapper>
-          </Row>
+          </FlexRow>
         </Col>
         <Col size={1}>
-          <Row>
+          <FlexRow justify="flex-end">
             <StyledWrapper>
               <StyledNavLink to="/work">My Work</StyledNavLink>
             </StyledWrapper>
@@ -64,9 +64,9 @@ const Navbar = () => {
             <StyledWrapper>
               <StyledNavLink to="/beingUnusual">BeingUnusual</StyledNavLink>
             </StyledWrapper>
-          </Row>
+          </FlexRow>
         </Col>
-      </PadddedRow>
+      </Row>
     </Grid>
   );
 };
