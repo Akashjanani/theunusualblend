@@ -1,7 +1,18 @@
-import React from 'react'
+import React from 'react';
+import { BrowserRouter, Switch } from 'react-router-dom';
+
+import Navbar from './components/Navbar';
+import AppBody from './components/AppBody';
 
 const App = () => {
-  return <h1>Portfolio v2.0</h1>
-}
+  return (
+    <BrowserRouter>
+      <Navbar />
+      <Switch>
+        <AppBody />
+      </Switch>
+    </BrowserRouter>
+  );
+};
 
-export default App
+export default App;

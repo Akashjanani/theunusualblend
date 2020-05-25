@@ -8,22 +8,27 @@ module.exports = {
   extends: [
     'airbnb',
     'plugin:jsx-a11y/recommended',
-    'prettier',
-    'prettier/react',
-    'plugin:jest/recommended'
+    'plugin:prettier/recommended',
+    'plugin:jest/recommended',
+    'plugin:react/recommended'
   ],
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    }
+  },
   plugins: [
+    'better-styled-components',
     'jsx-a11y',
     'prettier',
-    'jest'
+    'jest',
+    'react'
   ],
   rules: {
+    'better-styled-components/sort-declarations-alphabetically': 2,
+    'react/jsx-fragments': 0,
     'react/jsx-filename-extension': [1, { "extensions": [".js", ".jsx"] }],
-    'prettier/prettier': [
-      'error', {
-        'semi': false
-      }
-    ],
+    'prettier/prettier': 'error',
     'import/no-extraneous-dependencies': ['error', {
       'devDependencies': true
     }]
